@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+  <title>Books</title>
+  <link rel="stylesheet" href="css/site.css">
+  <style>
+  th{background-color: blue; color: white;}
+  ul{color:white;}
+  form{background-color: pink;}
+  </style>
+</head>
+<!-- basic nav structure from bootstrap -->
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" href="index.html">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="books.html">Books</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="movies.html">Movies</a>
+  </li>
+</ul>
+<body>
+
+  <P> Here is a table of 4 of my most recently read books. As I read more, I will
+    add it to the table using the form.
+<!--got following table template from bootstrap -->
+<table id="booktable" class="table">
+  <thead>
+    <tr>
+
+      <th scope="col">Title</th>
+      <th scope="col">Author</th>
+      <th scope="col">Year Published</th>
+      <th scope="col">Publisher</th>
+        <th scope="col">Page Count</th>
+          <th scope="col">MSRP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id="book1">
+      <td scope="row">Becoming</th>
+      <td>Michelle Obama</td>
+      <td>2018</td>
+      <td>Crown Publishing Group</td>
+      <td>448</td>
+      <td>$32.00</td>
+    </tr>
+    <tr>
+      <td scope="row">David and Goliath</th>
+      <td>Malcolm Gladwell</td>
+      <td>2013</td>
+      <td>Back Bay Books</td>
+      <td>295</td>
+      <td>$18.00</td>
+    </tr>
+    <tr class="book2">
+      <td scope="row">Everybody Always</th>
+      <td>Bob Goff</td>
+      <td>2018</td>
+      <td>Nelson Books</td>
+      <td>228</td>
+      <td>$17.00</td>
+    </tr>
+    <tr>
+      <td scope="row">You</th>
+      <td>Caroline Kepnes</td>
+      <td>2014</td>
+      <td>Emily Bestler Books</td>
+      <td>424</td>
+      <td>$16.00</td>
+    </tr>
+  </tbody>
+</table>
+<!-- Got form template from bootstrap -->
+<form>
+  <div class="form-group">
+    <label for="BookTitle">Book <title>Home</title></label>
+    <input type="string" class="form-control" id="BookTitle" placeholder="Enter Book Title">
+  </div>
+  <div class="form-group">
+    <label for="BookAuthor">Book Author</label>
+    <input type="text" class="form-control" id="BookAuthor" placeholder="Enter Book Author">
+  </div>
+  <div class="form-group">
+    <label for="YearPublished">Year Published</label>
+    <input type="number" class="form-control" id="YearPublished" placeholder="Enter Year Published">
+  </div>
+  <div class="form-group">
+    <label for="PublishedBy">Publisher</label>
+    <input type="text" class="form-control" id="PublishedBy" placeholder="Enter Publisher">
+  </div>
+  <div class="form-group">
+    <label for="PageCount">Number of Pages</label>
+    <input type="integer" class="form-control" id="PageCount" placeholder="Enter Number of Pages">
+  </div>
+  <div class="form-group">
+    <label for="MSRP">MSRP</label>
+    <input type="currency" class="form-control" id="MSRP" placeholder="Enter MSRP">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+
+<!-- tablesort from http://tristen.ca/tablesort/demo/-->>
+<script src="js/tablesort.min.js" ></script>
+<script>
+  new Tablesort(document.getElementById('booktable'));
+</script>
+</html>
