@@ -1,17 +1,61 @@
-var people = new Vue({
-  el: '#people',
+var peopleApp = new Vue({
+  el: '#peopleApp',
   data: {
-    patients: []
-  },
+    "user": {
+      "gender": "",
+
+      "name": {
+        "title": "",
+
+        "first": "",
+
+        "last": ""
+
+      },
+
+      "location":{
+
+        "street": "",
+
+        "city": "",
+
+        "state": "",
+
+        "postcode":"",
+      },
+
+      "email": "",
+
+      "dob": {
+        "date": "",
+
+        "age": "",
+      },
+
+      "picture": {
+
+        "large": "",
+
+        "medium":"",
+
+        "thumbnail": ""
+
+      },
+
+      "Nat": ""
+    },
+    comment: []
+},
 
 // Means the same at this
 methods: {
-  fetchPeople() {
+ fetchPatients() {
  fetch('https://randomuser.me/api/')
- .then(function(response) {return response.json()})
- .then(function(json) {waitingApp.people = json});
-
+ .then( response => response.json() )
+     .then( json => {peopleApp.user = json.results[0]})
+     ;
+//
 created() {
-      this.fetchPeople();
+    this.fetchPatients();
     }
   })
