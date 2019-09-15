@@ -1,7 +1,7 @@
-var peopleApp = new Vue({
-  el: '#peopleApp',
-  data: {
-    "user": {
+var WaitingApp = new Vue({
+  el: '#waitingApp',
+  data: {"user": {
+
       "gender": "",
 
       "name": {
@@ -47,14 +47,14 @@ var peopleApp = new Vue({
     comment: []
 },
 
-// Means the same at this
+// Means the same as this
 methods: {
  fetchPatients() {
  fetch('https://randomuser.me/api/')
  .then( response => response.json() )
-     .then( json => {peopleApp.user = json.results[0]})
-     ;
-//
+     .then( json => {waitingApp.user = json.results[0]})
+     ;}
+   },
 created() {
     this.fetchPatients();
     }

@@ -21,20 +21,24 @@
   </li>
 </ul>
 <body>
-<div id="peopleApp">
+<div id="WaitingApp">
 
-<h1><span> {{user.name.first}} </span></h1>
+<h1>
+  <span> {{user.name.first}} </span>
+</h1>
 <p>
-  <img v-bind src="user.picture.large" class="img-fluid" width= 100% \ 9;/>
+  <img v-bind:src="user.picture.large" class="img-fluid" width= 100% \ 9;>
   <ul>
 <li>Hometown:{{user.location.street}}</li>
 <li>Birthdate: {{user.dob.date}}</li>
-<li>Age: 50</li>
-<li><a href="mailto:name@email.com">vhamersly@email.com</a></li>
+<li>Age: {{user.dob.age}}</li>
+<li><a href="mailto:name@email.com">{{user.email}}</a></li>
 </ul>
 </p>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="js/people.js"></script>
+
 </body>
 </html>
