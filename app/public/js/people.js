@@ -1,4 +1,4 @@
-var WaitingApp = new Vue({
+var App = new Vue({
   el: '#waitingApp',
   data: {"user": {
 
@@ -52,7 +52,7 @@ methods: {
  fetchPatients() {
  fetch('https://randomuser.me/api/')
  .then( response => response.json() )
-     .then( json => {waitingApp.user = json.results[0]})
+     .then( json => {App.user = json.results[0]})
      ;}
    },
 created() {
