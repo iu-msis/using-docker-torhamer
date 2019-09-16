@@ -21,18 +21,18 @@
   </li>
 </ul>
 <body>
-<div id="WaitingApp">
+<div id="waitingApp">
 
 <h1>
   <span> {{user.name.first}} </span>
 </h1>
 <p>
-  <img v-bind:src="user.picture.large" class="img-fluid" width= 100% \ 9;>
+  <img v-bind:src="user.picture.large" class="img-fluid">
   <ul>
 <li>Hometown:{{user.location.street}}</li>
 <li>Birthdate: {{user.dob.date}}</li>
 <li>Age: {{user.dob.age}}</li>
-<li><a href="mailto:name@email.com">{{user.email}}</a></li>
+<li><a :href="'mailto:'+user.email">{{user.email}}</a></li>
 </ul>
 </p>
 </div>
