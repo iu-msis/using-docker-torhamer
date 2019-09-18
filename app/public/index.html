@@ -22,7 +22,7 @@
 </ul>
 <body>
 <div id="waitingApp">
-
+<form @submit.prevent="fetchPatients()">
 <h1>
   <span> {{user.name.first}} </span>
 </h1>
@@ -34,7 +34,9 @@
 <li>Age: {{user.dob.age}}</li>
 <li><a :href="'mailto:'+user.email">{{user.email}}</a></li>
 </ul>
+<button type="submit">Refresh</button>
 </p>
+</form>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
