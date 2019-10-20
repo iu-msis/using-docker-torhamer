@@ -21,15 +21,26 @@
   </li>
 </ul>
 <body>
-<h1>Victoria Hamersly</h1>
+<div id="waitingApp">
+<form @submit.prevent="fetchPatients()">
+<h1>
+  <span> {{user.name.first}} </span>
+</h1>
 <p>
-  <img src="img/headshot.jpg" class="img-fluid" width= 100% \ 9;>
+  <img v-bind:src="user.picture.large" class="img-fluid">
   <ul>
-<li>Hometown: Indianapolis, Indiana</li>
-<li>Birthdate: January 31</li>
-<li>Age: 50</li>
-<li><a href="mailto:name@email.com">vhamersly@email.com</a></li>
+<li>Hometown:{{user.location.street}}</li>
+<li>Birthdate: {{user.dob.date}}</li>
+<li>Age: {{user.dob.age}}</li>
+<li><a :href="'mailto:'+user.email">{{user.email}}</a></li>
 </ul>
+<button type="submit">Refresh</button>
 </p>
+</form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/people.js"></script>
+
 </body>
 </html>
